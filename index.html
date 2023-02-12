@@ -17,7 +17,35 @@
 </head>
 
 <body>
+    <div class="container weather-box">
+        <div class="row">
+            <h1>City Name</h1>
+        </div>
+        <div class="row">
+            <div class="col-6">
+                <div class="row">
+                    <div class="d-flex icon-temperature-conversion">
+                        <img src="https://icons.iconarchive.com/icons/google/noto-emoji-travel-places/256/42652-sun-icon.png"
+                            alt="" id="weather-icon" />
+                        <div>
+                            <span class="current-temperature"> 10</span> <a href="" id="celsius-link">°C</a><span
+                                class="divider">|</span><a href="" id="farenheit-link">°F</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-3">
+                <ul>
+                    <li><span id="weekday">Weekday</span></li>
+                    <li>🗓️ <span id="date">Date</span> 🕰️ <span class="time">Time</span></li>
+                    <li>💨 Wind speed<span id="wind-speed">0.5</span>km/h</li>
+                    <li>🫧 Humidity <span id="humidity">20</span>%</li>
+                    <li>💧 Precipitation <span id="precipitation"></span></li>
+                </ul>
+            </div>
 
+        </div>
+    </div>
     <script src="src/app.js"></script>
 </body>
 
