@@ -50,6 +50,10 @@ function showData(response) {
 
   let date = document.querySelector("#date");
   date.innerHTML = dateAndTime(response.data.time * 1000);
+
+  let icon = document.querySelector("#weather-icon");
+  icon.setAttribute("src", `${response.data.condition.icon_url}`);
+  icon.setAttribute("alt", `${response.data.condition.description}`);
 }
 let city = "New York";
 let apiKey = "58e244e95c3e78eb13e0ffotadf7c1b8";
