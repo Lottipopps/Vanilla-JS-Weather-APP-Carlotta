@@ -54,6 +54,10 @@ function showData(response) {
   let icon = document.querySelector("#weather-icon");
   icon.setAttribute("src", `${response.data.condition.icon_url}`);
   icon.setAttribute("alt", `${response.data.condition.description}`);
+
+  let temperature = document.querySelector("#current-temperature");
+  temperature.innerHTML = Math.round(response.data.temperature.current);
+  celsiusTemperature = response.data.temperature.current;
 }
 function find(city) {
   let apiKey = "58e244e95c3e78eb13e0ffotadf7c1b8";
@@ -75,8 +79,33 @@ function findMe(event) {
   event.preventDefault();
   navigator.geolocation.getCurrentPosition(findMeNow);
 }
+
+function showFarenheitTemperature(event) {
+  event.preventDefault();
+  let temperature = document.querySelector("#current-temperature");
+  let farenheitTemperature = (celsiusTemperature * 9) / 5 + 32;
+  temperature.innerHTML = Math.round(farenheitTemperature);
+  celsiusLink.classList.remove("off");
+  farenheitLink.classList.add("off");
+}
+function showCelsiusTemperature(event) {
+  event.preventDefault();
+  let temperature = document.querySelector("#current-temperature");
+  temperature.innerHTML = Math.round(celsiusTemperature);
+  farenheitLink.classList.remove("off");
+  celsiusLink.classList.add("off");
+}
+
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", search);
 
 let currentLocationBtn = document.querySelector("#current-location");
 currentLocationBtn.addEventListener("click", findMe);
+
+let celsiusTemperature = null;
+
+let farenheitLink = document.querySelector("#farenheit-link");
+farenheitLink.addEventListener("click", showFarenheitTemperature);
+
+let celsiusLink = document.querySelector("#celsius-link");
+celsiusLink.addEventListener("click", showCelsiusTemperature);
