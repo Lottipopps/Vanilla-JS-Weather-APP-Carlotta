@@ -67,7 +67,7 @@ function search(event) {
 }
 function findMeNow(position) {
   let apiKey = "58e244e95c3e78eb13e0ffotadf7c1b8";
-  let apiUrl = `https://api.shecodes.io/weather/v1/current?lon=${position.coords.longitude}&lat=${position.coords.latitude}&key=${apiKey}`;
+  let apiUrl = `https://api.shecodes.io/weather/v1/current?lon=${position.coords.longitude}&lat=${position.coords.latitude}&key=${apiKey}&units=metric`;
   axios.get(apiUrl).then(showData);
 }
 
