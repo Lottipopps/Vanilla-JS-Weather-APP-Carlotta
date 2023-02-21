@@ -65,5 +65,18 @@ function search(event) {
   let city = document.querySelector("#city-search");
   find(city.value);
 }
+function findMeNow(position) {
+  let apiKey = "58e244e95c3e78eb13e0ffotadf7c1b8";
+  let apiUrl = `https://api.shecodes.io/weather/v1/current?lon=${position.coords.longitude}&lat=${position.coords.latitude}&key=${apiKey}`;
+  axios.get(apiUrl).then(showData);
+}
+
+function findMe(event) {
+  event.preventDefault();
+  navigator.geolocation.getCurrentPosition(findMeNow);
+}
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", search);
+
+let currentLocationBtn = document.querySelector("#current-location");
+currentLocationBtn.addEventListener("click", findMe);
