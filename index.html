@@ -18,44 +18,48 @@
 </head>
 
 <body>
-    <div class="container weather-box">
+    <div class="container">
+        <div class="weather-box">
 
-        <form id="search-form" autocomplete="off">
-            <div class="row">
-                <div class="col-8"><input type="search" placeholder="Search for a city" class="form-control"
-                        id="city-search"></div>
-                <div class="col-4"><input type="submit" value="Search">
-                    <input type="button" value="Current Location" id="current-location">
-                </div>
-            </div>
-        </form>
-
-        <div class="row">
-            <h1>London</h1>
-        </div>
-        <div class="row ">
-            <div class="col-6">
+            <form id="search-form" autocomplete="off">
                 <div class="row">
-                    <div class="d-flex icon-temperature-conversion">
-                        <img src="https://ssl.gstatic.com/onebox/weather/64/sunny.png" alt="" id="weather-icon" />
-                        <div>
-                            <span id="current-temperature"> 6</span> <span class="conversion-btns"><a href=""
-                                    id="celsius-link" class="off">°C</a><span class="divider">|</span><a href=""
-                                    id="farenheit-link">°F</a></span>
+                    <div class="col-8"><input type="search" placeholder="Search for a city" class="form-control"
+                            id="city-search"></div>
+                    <div class="col-4"><input type="submit" value="Search">
+                        <input type="button" value="Current Location" id="current-location">
+                    </div>
+                </div>
+            </form>
+
+            <div class="row">
+                <h1>London</h1>
+            </div>
+            <div class="row ">
+                <div class="col-6">
+                    <div class="row">
+                        <div class="d-flex icon-temperature-conversion">
+                            <img src="https://ssl.gstatic.com/onebox/weather/64/sunny.png" alt="" id="weather-icon" />
+                            <div>
+                                <span id="current-temperature"> 6</span> <span class="conversion-btns"><a href=""
+                                        id="celsius-link" class="off">°C</a><span class="divider">|</span><a href=""
+                                        id="farenheit-link">°F</a></span>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="col-3">
-                <ul>
-                    <li id="date">🗓️ Wednesday 22 Feb 2023, 00:37</li>
-                    <li>🌍 <span id="weather-description">Overcast Clouds </span></li>
-                    <li>💨 Wind speed <span id="wind-speed">2</span> km/h</li>
-                    <li>🫧 Humidity <span id="humidity">91</span>%</li>
-                </ul>
-            </div>
+                <div class="col-3">
+                    <ul>
+                        <li id="date">🗓️ Wednesday 22 Feb 2023, 00:37</li>
+                        <li>🌍 <span id="weather-description">Overcast Clouds </span></li>
+                        <li>💨 Wind speed <span id="wind-speed">2</span> km/h</li>
+                        <li>🫧 Humidity <span id="humidity">91</span>%</li>
+                    </ul>
+                </div>
 
+            </div>
         </div>
+        <footer> <a href="https://github.com/Lottipopps/Vanilla-JS-Weather-APP-Carlotta">Open source code</a> by
+            Carlotta Missiroli</footer>
     </div>
 
     <script src="src/app.js"></script>
