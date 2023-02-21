@@ -96,6 +96,8 @@ function showCelsiusTemperature(event) {
   celsiusLink.classList.add("off");
 }
 
+find("London");
+
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", search);
 
