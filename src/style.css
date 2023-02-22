@@ -42,3 +42,9 @@ img {
   color: #000;
   cursor: default;
 }
+.forecast {
+  text-align: center;
+  color: #000;
+  margin: 20px;
+  font-size: 16px;
+}
