@@ -79,6 +79,22 @@ function findMe(event) {
   event.preventDefault();
   navigator.geolocation.getCurrentPosition(findMeNow);
 }
+function showForecast() {
+  let forecastElement = document.querySelector("#forecast");
+  let forecastContent = `<div class="row">`;
+  let days = ["Fri", "Sat", "Sun"];
+  days.forEach(function eachDay(day) {
+    forecastContent =
+      forecastContent +
+      ` <div class="col-2 forecast">
+            <span class="forecast-day">${day}</span>
+            <img src="https://ssl.gstatic.com/onebox/weather/64/sunny.png" alt="sunny" width="25px" />
+            <span class="max-temp">18°</span> <span class="min-temp">12°</span>
+        </div>`;
+  });
+  forecastContent = forecastContent + `</div>`;
+  forecastElement.innerHTML = forecastContent;
+}
 
 function showFarenheitTemperature(event) {
   event.preventDefault();
@@ -97,6 +113,8 @@ function showCelsiusTemperature(event) {
 }
 
 find("London");
+
+showForecast();
 
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", search);
