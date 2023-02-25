@@ -1,22 +1,35 @@
 body {
-  background: rgb(0, 0, 0);
-  font-family: "Mukta", sans-serif;
+  background-image: url("https://s3.amazonaws.com/shecodesio-production/uploads/files/000/069/098/original/pexels-jess-loiterton-4321802.jpg?1677347668");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: black;
+  font-family: "Shantell Sans", cursive;
   text-align: center;
-  color: rgb(50, 50, 249);
+  color: rgb(5, 5, 249);
 }
 h1 {
   font-size: 60px;
+  font-weight: 600;
   text-align: center;
+  padding: 20px;
 }
 li {
-  font-size: 16px;
+  font-size: 18px;
   width: max-content;
   list-style: none;
-  line-height: 22px;
+  line-height: 40px;
   text-transform: capitalize;
 }
-img {
-  width: max-content;
+
+footer {
+  background: rgba(255, 255, 255, 0.8);
+  width: 350px;
+  display: block;
+  margin: 0 auto;
+  border: 0.5px solid #000;
+  border-radius: 5px;
+}
+#weather-icon {
   padding: 15px;
 }
 .conversion-btns {
@@ -28,21 +41,45 @@ img {
   font-size: 65px;
 }
 .weather-box {
-  background: rgb(255, 255, 255);
+  background: rgba(37, 221, 245, 0.75);
   margin: 0 auto;
   display: block;
   margin-top: 50px;
   padding: 30px;
-  width: 700px;
+  width: 800px;
   border: 3px solid rgb(0, 255, 251);
   border-radius: 30px;
 }
 
 .forecast {
-  color: #000;
+  color: rgb(42, 35, 249);
+  width: 130px;
   margin: 10px;
   padding: 5px;
-  font-size: 16px;
+  background: rgba(253, 238, 31, 0.3);
   border: 2px solid rgb(215, 249, 253);
   border-radius: 30px;
+  transition: all 200ms ease-in-out;
+}
+.forecast:hover {
+  transform: scale(1.2);
+  box-shadow: 10px 5px 5px rgba(0, 0, 0, 0.4);
+}
+.forecast-day {
+  text-transform: uppercase;
+  font-size: 18px;
+  font-weight: 700;
+}
+.max-temp {
+  font-size: 20px;
+  font-weight: 700;
+}
+.min-temp {
+  font-size: 14px;
+  font-weight:400
+  opacity: 0.8;
+}
+.icon-temperature{
+  display: block;
+  margin: 0 auto;
 }

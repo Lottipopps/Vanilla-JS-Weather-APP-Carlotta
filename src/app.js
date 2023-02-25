@@ -1,3 +1,13 @@
+function backgroundImage(hours) {
+  let body = document.querySelector("body");
+  if (hours < 7 || hours > 18) {
+    body.style.backgroundImage =
+      "url(https://s3.amazonaws.com/shecodesio-production/uploads/files/000/069/097/original/pexels-ken-cheung-5574638.jpg?1677347647)";
+  } else {
+    body.style.backgroundImage =
+      "url(https://s3.amazonaws.com/shecodesio-production/uploads/files/000/069/098/original/pexels-jess-loiterton-4321802.jpg?1677347668)";
+  }
+}
 function dateAndTime(timestamp) {
   let currentDate = new Date(timestamp);
   let hours = currentDate.getHours();
@@ -8,6 +18,7 @@ function dateAndTime(timestamp) {
   if (minutes < 10) {
     minutes = `0${minutes}`;
   }
+  backgroundImage(hours);
   let days = [
     "Sunday",
     "Monday",
@@ -107,7 +118,7 @@ function showForecast(response) {
             <span class="forecast-day">${findDay(object.time)}</span>
             <img src="${object.condition.icon_url}" alt="${
           object.condition.description
-        }"  class="forecast-pictures" />
+        }"  class="rounded mx-auto d-block forecast-pictures" />
             <span class="max-temp" >${Math.round(
               object.temperature.maximum
             )}°</span> <span class="min-temp" >${Math.round(
@@ -124,8 +135,6 @@ function obtainForecast(city) {
   let apiUrl = `https://api.shecodes.io/weather/v1/forecast?query=${city}&key=${apiKey}&units=metric`;
   axios.get(apiUrl).then(showForecast);
 }
-
-
 
 find("London");
 
