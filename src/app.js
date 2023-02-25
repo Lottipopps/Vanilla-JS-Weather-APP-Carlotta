@@ -98,10 +98,9 @@ function findDay(timestamp) {
 function showForecast(response) {
   let forecastElement = document.querySelector("#forecast");
   let dailyForecast = response.data.daily;
-  console.log(dailyForecast);
   let forecastContent = `<div class="row">`;
   dailyForecast.forEach(function eachDay(object, index) {
-    if (index < 5) {
+    if (index > 0 && index < 6) {
       forecastContent =
         forecastContent +
         ` <div class="col-2 forecast">
@@ -109,9 +108,9 @@ function showForecast(response) {
             <img src="${object.condition.icon_url}" alt="${
           object.condition.description
         }" width="15px" />
-            <span class="max-temp">${Math.round(
+            <span class="max-temp" id="max-temp">${Math.round(
               object.temperature.maximum
-            )}°</span> <span class="min-temp">${Math.round(
+            )}°</span> <span class="min-temp" id="min-temp">${Math.round(
           object.temperature.minimum
         )}°</span>
         </div>`;
@@ -142,14 +141,6 @@ function showCelsiusTemperature(event) {
   celsiusLink.classList.add("off");
 }
 
-find("London");
-
-let form = document.querySelector("#search-form");
-form.addEventListener("submit", search);
-
-let currentLocationBtn = document.querySelector("#current-location");
-currentLocationBtn.addEventListener("click", findMe);
-
 let celsiusTemperature = null;
 
 let farenheitLink = document.querySelector("#farenheit-link");
@@ -157,3 +148,11 @@ farenheitLink.addEventListener("click", showFarenheitTemperature);
 
 let celsiusLink = document.querySelector("#celsius-link");
 celsiusLink.addEventListener("click", showCelsiusTemperature);
+
+find("London");
+
+let form = document.querySelector("#search-form");
+form.addEventListener("submit", search);
+
+let currentLocationBtn = document.querySelector("#current-location");
+currentLocationBtn.addEventListener("click", findMe);
