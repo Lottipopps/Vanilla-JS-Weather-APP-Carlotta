@@ -34,7 +34,7 @@ img {
   margin-top: 50px;
   padding: 30px;
   width: 700px;
-  border: 1px solid rgb(0, 255, 251);
+  border: 3px solid rgb(0, 255, 251);
   border-radius: 30px;
 }
 .off {
@@ -43,8 +43,10 @@ img {
   cursor: default;
 }
 .forecast {
-  text-align: center;
   color: #000;
   margin: 10px;
+  padding: 5px;
   font-size: 16px;
+  border: 2px solid rgb(215, 249, 253);
+  border-radius: 30px;
 }

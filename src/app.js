@@ -107,10 +107,10 @@ function showForecast(response) {
             <span class="forecast-day">${findDay(object.time)}</span>
             <img src="${object.condition.icon_url}" alt="${
           object.condition.description
-        }" width="15px" />
-            <span class="max-temp" id="max-temp">${Math.round(
+        }"  class="forecast-pictures" />
+            <span class="max-temp" >${Math.round(
               object.temperature.maximum
-            )}°</span> <span class="min-temp" id="min-temp">${Math.round(
+            )}°</span> <span class="min-temp" >${Math.round(
           object.temperature.minimum
         )}°</span>
         </div>`;
@@ -125,29 +125,7 @@ function obtainForecast(city) {
   axios.get(apiUrl).then(showForecast);
 }
 
-function showFarenheitTemperature(event) {
-  event.preventDefault();
-  let temperature = document.querySelector("#current-temperature");
-  let farenheitTemperature = (celsiusTemperature * 9) / 5 + 32;
-  temperature.innerHTML = Math.round(farenheitTemperature);
-  celsiusLink.classList.remove("off");
-  farenheitLink.classList.add("off");
-}
-function showCelsiusTemperature(event) {
-  event.preventDefault();
-  let temperature = document.querySelector("#current-temperature");
-  temperature.innerHTML = Math.round(celsiusTemperature);
-  farenheitLink.classList.remove("off");
-  celsiusLink.classList.add("off");
-}
 
-let celsiusTemperature = null;
-
-let farenheitLink = document.querySelector("#farenheit-link");
-farenheitLink.addEventListener("click", showFarenheitTemperature);
-
-let celsiusLink = document.querySelector("#celsius-link");
-celsiusLink.addEventListener("click", showCelsiusTemperature);
 
 find("London");
 
