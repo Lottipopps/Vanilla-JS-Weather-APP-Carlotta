@@ -68,7 +68,6 @@ function showData(response) {
 
   let temperature = document.querySelector("#current-temperature");
   temperature.innerHTML = Math.round(response.data.temperature.current);
-  celsiusTemperature = response.data.temperature.current;
 
   obtainForecast(response.data.city);
 }
@@ -111,6 +110,8 @@ function showForecast(response) {
   let dailyForecast = response.data.daily;
   let forecastContent = `<div class="row">`;
   dailyForecast.forEach(function eachDay(object, index) {
+    let maxTemp = `${Math.round(object.temperature.maximum)}°C`;
+    let minTemp = `${Math.round(object.temperature.minimum)}°C`;
     if (index > 0 && index < 6) {
       forecastContent =
         forecastContent +
@@ -119,11 +120,7 @@ function showForecast(response) {
             <img src="${object.condition.icon_url}" alt="${
           object.condition.description
         }"  class="rounded mx-auto d-block forecast-pictures" />
-            <span class="max-temp" >${Math.round(
-              object.temperature.maximum
-            )}°</span> <span class="min-temp" >${Math.round(
-          object.temperature.minimum
-        )}°</span>
+            <span class="max-temp" >${maxTemp}</span> <span class="min-temp" >${minTemp}</span>
         </div>`;
     }
   });

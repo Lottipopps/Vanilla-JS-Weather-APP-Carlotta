@@ -76,10 +76,10 @@ footer {
 }
 .min-temp {
   font-size: 14px;
-  font-weight:400
+  font-weight: 400;
   opacity: 0.8;
 }
-.icon-temperature{
+.icon-temperature {
   display: block;
   margin: 0 auto;
 }
